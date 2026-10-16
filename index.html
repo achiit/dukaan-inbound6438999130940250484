@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17112b">
+<title>Quick Best Offer Mall | VIP Offers</title>
+<style>
+:root{--ink:#19152b;--gold:#f7c95b;--pink:#ff4fa3;--blue:#55d9ff;--green:#21c878}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#fff;background:radial-gradient(circle at 12% 10%,#6737a8 0,transparent 32%),radial-gradient(circle at 90% 25%,#064e77 0,transparent 30%),linear-gradient(135deg,#100d20,#20133d 50%,#101b32);min-height:100vh}
+.wrap{width:min(1080px,92%);margin:auto;padding:24px 0 38px}
+header{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:12px 0 22px}
+.brand{font-size:clamp(22px,4vw,34px);font-weight:900;letter-spacing:-.8px;line-height:1.15}
+.brand span{background:linear-gradient(90deg,#56e8ff 0%,#b5ff8a 24%,#ffe36e 48%,#ff83c9 72%,#b6a0ff 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 24px #ff83c933}
+.badge{border:1px solid #f7c95b88;color:#ffe7a0;border-radius:999px;padding:9px 13px;font-size:12px;font-weight:800;letter-spacing:1.4px;background:#f7c95b12}
+.hero{position:relative;overflow:hidden;border:1px solid #ffffff26;border-radius:28px;padding:clamp(24px,5vw,52px);background:linear-gradient(125deg,#ffffff15,#ffffff06);box-shadow:0 22px 65px #0005}
+.hero:after{content:"✦";position:absolute;right:5%;top:4%;font-size:clamp(80px,17vw,170px);color:#f7c95b20;transform:rotate(12deg);pointer-events:none}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(31px,6vw,58px);line-height:1.04;margin:14px 0 16px;max-width:750px;letter-spacing:-1.8px}
+.gradient{background:linear-gradient(90deg,#fff1b8,#f7c95b,#ff83c0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro{max-width:730px;color:#e7e4f4;line-height:1.7;font-size:16px}
+.notice{display:flex;gap:14px;align-items:flex-start;margin:25px 0 20px;padding:16px;border-radius:17px;background:#0908177a;border:1px solid #ffffff20;max-width:760px}
+.lock{font-size:26px}
+.notice strong{display:block;color:#ffe6a0;margin-bottom:5px}
+.notice p{margin:4px 0;color:#e9e6f4;line-height:1.55;font-size:14px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid #ffffff35;border-radius:14px;padding:13px 18px;font-weight:900;cursor:pointer;transition:transform .18s,filter .18s,box-shadow .18s;font-size:14px;box-shadow:0 7px 20px #0003,inset 0 1px 0 #ffffff55}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.12);box-shadow:0 12px 28px #0005,inset 0 1px 0 #ffffff77}
+.btn-gold{color:#23172b;background:linear-gradient(110deg,#fff09c 0%,#ffc857 45%,#ff8bcb 100%);border-color:#ffe9a6;box-shadow:0 8px 24px #ffba4b35,inset 0 1px 0 #ffffff99}
+.btn-wa{color:#052b1b;background:linear-gradient(110deg,#56f5b0 0%,#22d3a6 45%,#23c7f4 100%);border-color:#72ffd0;box-shadow:0 8px 24px #20dca055,inset 0 1px 0 #ffffff99}
+.btn-outline{color:white;border:1px solid #a6a1ff99;background:linear-gradient(110deg,#7c4dff99,#ed4fa633,#20c8ff22);box-shadow:0 8px 22px #7655ff22,inset 0 1px 0 #ffffff44}
+.vip{margin-top:22px;max-width:760px;border-radius:20px;padding:19px;background:linear-gradient(110deg,#5b287a9c,#b42c7880,#174d7d9c);border:1px solid #ffd87880}
+.vip-top{display:flex;align-items:center;gap:12px}
+.crown{font-size:30px}
+.vip h2{margin:0;font-size:21px}
+.vip p{margin:10px 0 14px;color:#fff0fb;line-height:1.6;font-size:14px}
+.vip small{display:block;color:#ffe4a2;margin-top:9px;line-height:1.5}
+.section-title{margin:38px 0 8px;font-size:clamp(22px,4vw,30px)}
+.sub{margin:0 0 20px;color:#d3cee7;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.cat{min-height:104px;text-align:left;display:flex;align-items:center;gap:13px;padding:17px;border-radius:18px;color:#fff;background:linear-gradient(135deg,#7c4dff38,#ff4fa326 52%,#23c7f426);border:1px solid #ffffff35;box-shadow:0 8px 22px #0002,inset 0 1px 0 #ffffff24;cursor:pointer;font:inherit;transition:.18s}
+.cat:hover{transform:translateY(-3px);border-color:#7df5ff;background:linear-gradient(135deg,#7c4dff66,#ff4fa344 52%,#23c7f444);box-shadow:0 12px 26px #0004,0 0 18px #65e8ff22}
+.icon{width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;border-radius:14px;font-size:23px;background:linear-gradient(135deg,#ffe36e66,#ff4fa355,#23c7f455);border:1px solid #ffffff45;box-shadow:inset 0 1px 0 #ffffff55}
+.cat b{display:block;font-size:15px;margin-bottom:5px}
+.cat span:last-child{font-size:12px;color:#cfc9e4;line-height:1.35}
+footer{text-align:center;color:#bcb6d3;font-size:12px;line-height:1.7;padding:30px 0 5px}
+.float{position:fixed;right:18px;bottom:18px;z-index:5;border-radius:999px;padding:14px 18px;box-shadow:0 8px 30px #0006}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{border-radius:22px}.brand{max-width:250px}.float{right:12px;bottom:12px}}
+@media(max-width:430px){.grid{grid-template-columns:1fr}.cat{min-height:82px}.btn{width:100%}.badge{font-size:10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">QUICK <span>BEST OFFER MALL</span></div>
+  <div class="badge">✦ SMART DEALS · VIP ACCESS ✦</div>
+</header>
+<main>
+<section class="hero">
+  <div class="eyebrow">Your offer desk • Quick & easy</div>
+  <h1>Discover More.<br><span class="gradient">Save Smarter.</span></h1>
+  <p class="intro">Choose the offer category you’re interested in and contact our team on WhatsApp for details. No product listings are shown on this website.</p>
+  <div class="notice">
+    <div class="lock">🔒</div>
+    <div>
+      <strong>This website is currently unavailable to you | अभी यह वेबसाइट आपके लिए उपलब्ध नहीं है</strong>
+      <p>This website is currently unavailable to you. To learn about available offers, select a category below and message us on WhatsApp.</p>
+      <p>अभी यह वेबसाइट आपके लिए उपलब्ध नहीं है। ऑफर्स की जानकारी पाने के लिए नीचे अपनी पसंद की कैटेगरी चुनें और WhatsApp पर मैसेज भेजें।</p>
+    </div>
+  </div>
+  <div class="actions">
+    <a class="btn btn-wa" href="https://wa.me/919828537944?text=Namaste%20Quick%20Best%20Offer%20Mall%2C%20mujhe%20available%20offers%20ki%20jankari%20chahiye." target="_blank" rel="noopener">☘ Message on WhatsApp</a>
+    <a class="btn btn-outline" href="#categories">Explore Categories ↓</a>
+  </div>
+  <div class="vip">
+    <div class="vip-top"><div class="crown">👑</div><div><div class="eyebrow" style="color:#ffe49b">Exclusive Access</div><h2>VIP Customer Offers</h2></div></div>
+    <p><b>VIP customers ke liye special offers available hain!</b><br>
+    ₹1 se ₹15,000 tak ke VIP offers ki jaankari paane ke liye neeche button par click karke hamse WhatsApp par sampark karein.</p>
+    <a class="btn btn-gold" href="https://wa.me/919828537944?text=Namaste%20Quick%20Best%20Offer%20Mall%2C%20mujhe%20%E2%82%B91%20se%20%E2%82%B915%2C000%20tak%20ke%20VIP%20offers%20ki%20details%20chahiye.%20Kripya%20VIP%20eligibility%2C%20offer%20terms%2C%20aur%20token%20payment%20ki%20poori%20jankari%20batayein." target="_blank" rel="noopener">👑 Get VIP Offers Details</a>
+    <small>Token note: VIP offers ke liye ₹2,000 token ka zikr diya gaya hai. Payment karne se pehle eligibility, refund policy, written terms aur business details WhatsApp par verify karein. This website does not collect payments.</small>
+  </div>
+</section>
+<section id="categories">
+  <h2 class="section-title">Choose Your Offer Category</h2>
+  <p class="sub">Select a category. WhatsApp will open with a pre-filled message about your choice.<br>अपनी पसंद की कैटेगरी चुनें—मैसेज तैयार होकर WhatsApp में खुलेगा।</p>
+  <div class="grid" id="categoryGrid"></div>
+</section>
+</main>
+<footer>QUICK BEST OFFER MALL · Information and offer terms are confirmed directly by our team.<br>Offers, availability, prices and eligibility may vary. Please verify all terms before making any payment.</footer>
+</div>
+<a class="btn btn-wa float" href="https://wa.me/919828537944?text=Namaste%20Quick%20Best%20Offer%20Mall%2C%20mujhe%20offers%20ki%20jankari%20chahiye." target="_blank" rel="noopener">WhatsApp ✆</a>
+<script>
+const phone = "919828537944";
+const categories = [
+ ["📱","Mobile & Electronics","Mobiles, gadgets & accessories"],
+ ["👗","Fashion & Clothing","Clothing, bags & style offers"],
+ ["👟","Shoes & Footwear","Footwear offers"],
+ ["💄","Beauty & Personal Care","Beauty and personal-care offers"],
+ ["🏠","Home & Kitchen","Home essentials and kitchen offers"],
+ ["📺","TV & Appliances","Appliances and entertainment"],
+ ["💻","Laptop & Computer","Computers and accessories"],
+ ["🛒","Grocery & Daily Needs","Everyday essentials"],
+ ["🏷️","Branded Products","Brand-related offer information"],
+ ["🎁","Special & Exclusive","Limited or special offers"],
+ ["🚚","Delivery & Shopping Deals","Delivery and shopping-related offers"],
+ ["👑","VIP Offers","₹1–₹15,000 VIP offer information"]
+];
+const grid=document.getElementById("categoryGrid");
+categories.forEach(([icon,name,desc])=>{
+ const btn=document.createElement("button");btn.className="cat";btn.type="button";
+ btn.innerHTML=`<span class="icon">${icon}</span><span><b>${name}</b><span>${desc}</span></span>`;
+ btn.addEventListener("click",()=>{
+   const msg=`Namaste Quick Best Offer Mall!\\n\\nMujhe offers ki jankari chahiye.\\nSelected Category: ${name}\\n\\nKripya available offers, total price, discount, eligibility, delivery details aur offer ki terms & conditions batayein.\\n\\nDhanyavaad!`;
+   window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,"_blank","noopener");
+ });
+ grid.appendChild(btn);
+});
+</script>
+</body>
+</html>
